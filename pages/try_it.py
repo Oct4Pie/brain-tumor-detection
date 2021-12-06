@@ -42,7 +42,7 @@ def main():
                 thresh = cv2.threshold(gray_mask, 0, 255, cv2.THRESH_OTSU)[-1]
                 img = cv2.resize(img, (32, 32))
                 img = np.array([img])
-                prediction = model.predict_classes(img)
+                prediction = model.predict(img)
 
                 st.write("""
                 #### Mask Threshold
