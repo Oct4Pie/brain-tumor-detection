@@ -20,7 +20,6 @@ def get_samples():
     for directory in os.listdir(data_dir):
         for file in os.listdir(os.path.join(data_dir, directory)):
             file_path = os.path.join(data_dir, directory, file)
-            print(file_path)
             if imghdr.what(file_path):
                 if imghdr.what(file_path).lower() in img_formats:
                     paths.append(file_path)
@@ -41,7 +40,6 @@ def get_test_samples(size):
     for directory in os.listdir(data_dir):
         for file in os.listdir(os.path.join(data_dir, directory)):
             file_path = os.path.join(data_dir, directory, file)
-            print(file_path)
             if imghdr.what(file_path):
                 if imghdr.what(file_path).lower() in img_formats:
                     paths.append(file_path)
@@ -65,7 +63,6 @@ def get_test_sample(img_name):
     for file in os.listdir("tests"):
         if img_name == file:
             file_path = os.path.join("tests", file)
-            print(file_path)
             if imghdr.what(file_path):
                 if imghdr.what(file_path).lower() in img_formats:
                     img.append(cv2.resize(cv2.imread(file_path), (size, size)))

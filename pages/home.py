@@ -23,12 +23,10 @@ def main():
     collection = []
     for i in range(0, len(samples), 3):
         collection.append(st.columns(3))
-    print(len(collection))
+
     if i < len(samples) - 3:
         collection.append(st.columns(len(samples) - i))
 
-    print(len(collection))
-    print(len(collection[-1]))
     index = 0
     for column_list in collection:
         for i in range(len(column_list)):
