@@ -43,7 +43,7 @@ def main():
             gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
             thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU)[-1]
             img = np.array([cv2.resize(image, (32, 32))])
-            prediction = model.predict_classes(img)
+            prediction = model.predict(img)
 
             st.write(
                 """
