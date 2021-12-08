@@ -1,6 +1,6 @@
 # Brain-tumor-detection
 <p align="center">
-<img src="https://raw.githubusercontent.com/Oct4Pie/brain-tumor-detection/main/logo/brain.png">
+<img src="https://raw.githubusercontent.com/Oct4Pie/brain-tumor-detection/main/logo/brain.png" width="40%">
 </p>
 
 ## About
@@ -9,4 +9,4 @@ This program is designed to facilitate the diagnosis of brain tumors from 2D MRI
 [Brain Tumor Classification (MRI)](https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri) (datasets)
 [Brain MRI Images for Brain Tumor Detection](https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection) (datasets)
 [MRI Based Brain Tumor Images](https://www.kaggle.com/mhantor/mri-based-brain-tumor-images) (datasets)
-[#### Starter: Brain MRI Images for Brain b5be8b94-c](https://www.kaggle.com/kerneler/starter-brain-mri-images-for-brain-b5be8b94-c) (datasets and inspiration)# New Document
+[#### Starter: Brain MRI Images for Brain b5be8b94-c](https://www.kaggle.com/kerneler/starter-brain-mri-images-for-brain-b5be8b94-c) (datasets and inspiration)# New Document# New Document
