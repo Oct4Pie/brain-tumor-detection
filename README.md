@@ -1,6 +1,6 @@
 # Brain-tumor-detection
 <p align="center">
-<img src="https://raw.githubusercontent.com/Oct4Pie/brain-tumor-detection/main/logo/brain.png" width="27%">
+<img src="https://raw.githubusercontent.com/Oct4Pie/brain-tumor-detection/main/logo/brain.png" width="10%" style="margin: 0px; transform: translateY(-50%)">
 </p>
 
 ## About
