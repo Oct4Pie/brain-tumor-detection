@@ -15,52 +15,57 @@ def load_model():
 
 
 def main():
-    set_css('pages/css/streamlit.css')
     html_components.html(title())
-    image_bytes = st.file_uploader("Upload a brain MRI scan image", type = ['png', 'jpeg', 'jpg'])
+    set_css("pages/css/streamlit.css")
+    st.write(
+        """Here, you can upload your MRI image of choice and see the analysis results.
+    The program will automatically crop the image to the brain area and then analyzes the 
+    image. The results will be displayed in the browser."""
+    )
+    image_bytes = st.file_uploader(
+        "Upload a brain MRI scan image", type=["png", "jpeg", "jpg"]
+    )
+
     def format_func(item):
         return item
-        
 
     if image_bytes:
         array = np.fromstring(image_bytes.read(), np.uint8)
         image = cv2.imdecode(array, cv2.IMREAD_COLOR)
         image = cv2.resize(image, (128, 128))
-        st.write("""
+        st.write(
+            """
                 #### Brain MRI scan image
-                """)
+                """
+        )
         st.image(image)
-    
+
     if st.button("Analyze"):
-            with st.spinner(text='Analyzing...'):
-                gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-                img = crop_img(gray, image, None)
-                cv2.imwrite('temp.png', img)
-                model, acc, loss = load_model()
-                img_mask = crop_img(gray, image, None)
-                gray_mask = cv2.cvtColor(img_mask, cv2.COLOR_BGR2GRAY)
-                thresh = cv2.threshold(gray_mask, 0, 255, cv2.THRESH_OTSU)[-1]
-                img = cv2.resize(img, (32, 32))
-                img = np.array([img])
-                prediction = model.predict(img)
+        with st.spinner(text="Analyzing..."):
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            img = crop_img(gray, image, None)
+            cv2.imwrite("temp.png", img)
+            model, acc, loss = load_model()
+            img_mask = crop_img(gray, image, None)
+            gray_mask = cv2.cvtColor(img_mask, cv2.COLOR_BGR2GRAY)
+            thresh = cv2.threshold(gray_mask, 0, 255, cv2.THRESH_OTSU)[-1]
+            img = cv2.resize(img, (32, 32))
+            img = np.array([img])
+            prediction = model.predict(img)
 
-                st.write("""
+            st.write(
+                """
                 #### Mask Threshold
-                """)
+                """
+            )
 
-                st.image(cv2.resize(thresh, (128, 128)))
+            st.image(cv2.resize(thresh, (128, 128)))
 
-                st.write("""
-                            #### Prediction
-                            """)
-                st.image(cv2.resize(img_mask, (128, 128)))
-                if prediction[0][0] == 1:
-                    st.write(
-                        f"The sample has a tumor"
-                    )
+            st.write("""#### Prediction""")
+            st.image(cv2.resize(img_mask, (128, 128)))
+            if prediction[0][0] == 1:
+                st.write(f"The sample has a tumor")
 
-                if prediction[0][0] == 0:
-                    st.write(
-                        f"The sample has no tumor"
-                    )
-                st.write(f"Accuracy: {acc*100:.2f}%")
+            if prediction[0][0] == 0:
+                st.write(f"The sample has no tumor")
+            st.write(f"Accuracy: {acc*100:.2f}%")

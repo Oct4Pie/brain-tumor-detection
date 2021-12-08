@@ -46,3 +46,23 @@ div[data-testid=stImage] {
     margin-left: auto;
     margin-right: auto;
 }
+
+.stSelectbox label {
+    display: block;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+div[data-testid=stMarkdownContainer] p {
+    text-align: center;
+}
+
+#ghcard-oct4pie-1 {
+    display: none;
+    justify-content: center;
+}
+
+html {
+    overflow: scroll !important;
+}

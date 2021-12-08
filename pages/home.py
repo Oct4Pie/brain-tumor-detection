@@ -18,8 +18,9 @@ def load_model():
 def main():
     set_css("pages/css/streamlit.css")
     html_components.html(title())
+    st.write("These are pre-cropped MRI scan samples. They were used to valdiate the model.\n")
     samples = os.listdir("pages/samples")
-    option = st.selectbox("Select the image for analysis", (range(1, len(samples) + 1)))
+    option = st.selectbox("Select an image for analysis", (range(1, len(samples) + 1)))
     collection = []
     for i in range(0, len(samples), 3):
         collection.append(st.columns(3))
