@@ -1,6 +1,5 @@
 import streamlit as st
-import requests
-from .utils import set_js
+from .utils import set_css, set_js
 from .components import title, github_iframe, github_card
 import streamlit.components.v1 as html_components
 
@@ -16,6 +15,7 @@ def main():
     # });
     # """
     # set_js(script, "github-widget")
+    set_css("pages/css/streamlit.css")
     html_components.html(title())
     html_components.html(github_card(), height=300)
 

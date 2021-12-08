@@ -3,11 +3,9 @@ import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "model")))
 import streamlit as st
-import streamlit.components.v1 as html_components
 from pages import home
 from pages import about
 from pages import github
-from pages import components
 from pages import try_it
 
 
@@ -17,6 +15,7 @@ routes = {
     "About": about.main,
     "GitHub": github.main,
 }
+
 # st.markdown(
 #     "<head> <meta http-equiv=\"Content-Security-Policy\" \"> </head>",
 #     unsafe_allow_html=True,

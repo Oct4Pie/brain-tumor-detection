@@ -20,6 +20,7 @@ def main():
     loaded using the [get_model(num)](https://github.com/Oct4Pie/brain-tumor-detection/blob/f13044f11e797a90ed73b2bbe94ab7a7502f02f5/model/predictor.py#L24)
     where num is the number of the model to be loaded. This interface is
     built using Streamlit and uses this mechanism to allow for a fast and
-    intuitive analysis of the data.
+    intuitive analysis of given data.
     """
-    st.write(about_text, unsafe_allow_html=True)
+    st.write(about_text)
+    st.markdown("<a href='https://github.com/Oct4Pie/' target='_blank'><h6 style='text-align: center'>by Mehdi Hajmollaahmad Naraghi</h6></a>", unsafe_allow_html=True)

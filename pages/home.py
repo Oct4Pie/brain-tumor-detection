@@ -54,7 +54,7 @@ def main():
 
             st.write(
                 """
-                        #### Prediction
+                #### Prediction
                         """
             )
             st.image(image, caption=option)
