@@ -26,7 +26,6 @@ st.set_page_config(
     page_title="Brain Tumor Detection",
     page_icon=":brain:",
     layout="wide",
-    initial_sidebar_state="expanded",
     menu_items={
         "Get Help": "https://github.com/Oct4Pie/brain-tumor-detection",
         "Report a bug": "https://github.com/Oct4Pie/brain-tumor-detection/issues",

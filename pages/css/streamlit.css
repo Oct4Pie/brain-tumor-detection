@@ -50,11 +50,11 @@ div[data-testid=stImage] {
 .stSelectbox label {
     display: block;
     text-align: center;
-    font-size: 2vw;
+    font-size: calc(1vw + 15px);
     font-weight: bold;
 }
 
-div[data-testid=stMarkdownContainer] p {
+.git_link {
     text-align: center;
 }
 
